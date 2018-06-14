@@ -14,6 +14,7 @@
 		FD42E78B20D24517007063C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD42E78A20D24517007063C0 /* Assets.xcassets */; };
 		FD42E78E20D24517007063C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD42E78C20D24517007063C0 /* LaunchScreen.storyboard */; };
 		FD42E79920D24518007063C0 /* TestCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E79820D24518007063C0 /* TestCreatorTests.swift */; };
+		FD42E7A720D24579007063C0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E7A620D24579007063C0 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FD42E79420D24517007063C0 /* TestCreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCreatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42E79820D24518007063C0 /* TestCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCreatorTests.swift; sourceTree = "<group>"; };
 		FD42E79A20D24518007063C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD42E7A620D24579007063C0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +84,9 @@
 				FD42E78020D24513007063C0 /* AppDelegate.swift */,
 				FD42E78220D24513007063C0 /* ViewController.swift */,
 				FD42E78420D24513007063C0 /* Main.storyboard */,
-				FD42E78A20D24517007063C0 /* Assets.xcassets */,
-				FD42E78C20D24517007063C0 /* LaunchScreen.storyboard */,
-				FD42E78F20D24517007063C0 /* Info.plist */,
-				FD42E78720D24513007063C0 /* TestCreator.xcdatamodeld */,
+				FD42E7A520D24558007063C0 /* Model */,
+				FD42E7A420D24546007063C0 /* Service */,
+				FD42E7A320D2452F007063C0 /* Suppoting Files */,
 			);
 			path = TestCreator;
 			sourceTree = "<group>";
@@ -97,6 +98,32 @@
 				FD42E79A20D24518007063C0 /* Info.plist */,
 			);
 			path = TestCreatorTests;
+			sourceTree = "<group>";
+		};
+		FD42E7A320D2452F007063C0 /* Suppoting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD42E78A20D24517007063C0 /* Assets.xcassets */,
+				FD42E78C20D24517007063C0 /* LaunchScreen.storyboard */,
+				FD42E78F20D24517007063C0 /* Info.plist */,
+			);
+			path = "Suppoting Files";
+			sourceTree = "<group>";
+		};
+		FD42E7A420D24546007063C0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FD42E78720D24513007063C0 /* TestCreator.xcdatamodeld */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FD42E7A520D24558007063C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD42E7A620D24579007063C0 /* File.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD42E78320D24513007063C0 /* ViewController.swift in Sources */,
+				FD42E7A720D24579007063C0 /* File.swift in Sources */,
 				FD42E78120D24513007063C0 /* AppDelegate.swift in Sources */,
 				FD42E78920D24513007063C0 /* TestCreator.xcdatamodeld in Sources */,
 			);
@@ -364,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82L9KUH2QT;
-				INFOPLIST_FILE = TestCreator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestCreator/Suppoting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82L9KUH2QT;
-				INFOPLIST_FILE = TestCreator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestCreator/Suppoting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
