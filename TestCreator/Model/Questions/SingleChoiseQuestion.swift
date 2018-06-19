@@ -8,22 +8,15 @@
 
 import Foundation
 
-class SingleChoiseQuestion:Question{    
-    static func == (lhs: SingleChoiseQuestion, rhs: SingleChoiseQuestion) -> Bool {
-        return lhs.statement == rhs.statement
-    }
-    
-    public var result: [Theme:Double] = [:]
-    var statement:String?
-//        var image:UIImage?
-    let questionType: QuestionType = .singleAnswer
-    var status: QueryStatus = .notPassed
-    var categories: [Theme]
+class SingleChoiseQuestion:Question{
+    override var questionType: QuestionType{return .singleAnswer}
+    var status: QuestionStatus = .notAnswered
     var answers: [Answer] = []
     var choosenAnswer: Answer? = nil
     
     
-    init(categories: [Theme] = [], answers: [Answer] = []){
+    init(statement: Statement, categories: [Theme] = [], answers: [Answer] = []){
+        super.init(statement: statement)
         self.categories = categories
         for newAnswer in answers{
             self.add(answer: newAnswer)
@@ -70,16 +63,16 @@ class SingleChoiseQuestion:Question{
         if answers.contains(answer), choosenAnswer != answer{
             choosenAnswer = answer
             result = answer.impacts
-            status = .passed
+            status = .answered
         }
     }
     
     func reset(){
         switch status{
-        case .passed:
+        case .answered:
             choosenAnswer = nil
             result = [:]
-            status = .notPassed
+            status = .notAnswered
         default:
             return
         }

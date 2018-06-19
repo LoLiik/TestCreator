@@ -10,10 +10,9 @@ import XCTest
 @testable import TestCreator
 
 class SingleChoiseQuestionTests: XCTestCase {
-    
+    let mockStatement = Statement(text: "Mock Statement")
     override func setUp() {
         super.setUp()
-        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -26,16 +25,17 @@ class SingleChoiseQuestionTests: XCTestCase {
         // 1.given
         
         // 2.when
-        let sut = SingleChoiseQuestion()
+        
+        let sut = SingleChoiseQuestion(statement: mockStatement)
         // 3.then
-        XCTAssertEqual(sut.status, .notPassed, "SingleChoiseQuestion has wrong status on initialization", file: "SingleChoiseQuestion.swift", line: 77)
+        XCTAssertEqual(sut.status, .notAnswered, "SingleChoiseQuestion has wrong status on initialization", file: "SingleChoiseQuestion.swift", line: 77)
     }
     
     func test_SingleChoiseQuestion_CreationWithSingleCategories() {
         // 1.given
         let categoriesInTest = [Theme("cars"), Theme("bikes")]
         // 2.when
-        let sut = SingleChoiseQuestion(categories: [categoriesInTest.last!])
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [categoriesInTest.last!])
         // 3.then
         XCTAssertEqual(sut.currentCategory.count, 1)
     }
@@ -44,7 +44,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         // 1.given
         let categoriesInTest = [Theme("cars"), Theme("bikes")]
         // 2.when
-        let sut = SingleChoiseQuestion(categories:categoriesInTest)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories:categoriesInTest)
         // 3.then
         XCTAssertEqual(sut.currentCategory.count, categoriesInTest.count)
     }
@@ -52,7 +52,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_AddingCategory(){
         // 1.given
         let categoriesInTest = [Theme("cars"), Theme("bikes")]
-        let sut = SingleChoiseQuestion(categories:categoriesInTest)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories:categoriesInTest)
         // 2.when
         sut.add(category: Theme("moto"))
         // 3.then
@@ -62,7 +62,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_RemovingCategory() {
         // 1.given
         let categoriesInTest = [Theme("cars"), Theme("bikes"), Theme("moto")]
-        let sut = SingleChoiseQuestion(categories:categoriesInTest)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories:categoriesInTest)
         // 2.when
         let removedCategory = sut.remove(category: categoriesInTest.first!)
         // 3.then
@@ -73,7 +73,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_RemovingWrongCategory() {
         // 1.given
         let categoriesInTest = [Theme("cars"), Theme("bikes"), Theme("moto")]
-        let sut = SingleChoiseQuestion(categories:categoriesInTest)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories:categoriesInTest)
         // 2.when
         let removedWrongCategory = sut.remove(category: Theme("bike"))
         // 3.then
@@ -84,7 +84,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_HasAnswer() {
         // 1.given
         let mockAnswer = Answer(text: "Mock Answer")
-        let sut = SingleChoiseQuestion()
+        let sut = SingleChoiseQuestion(statement: mockStatement)
         // 2.when
         sut.add(answer: mockAnswer)
         // 3.then
@@ -96,7 +96,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         let wrongCategory = Theme("Another theme")
         let mockAnswer = Answer()
         mockAnswer.addWeight(1, for: wrongCategory)
-        let sut = SingleChoiseQuestion()
+        let sut = SingleChoiseQuestion(statement: mockStatement)
         // 2.when
         sut.add(answer:mockAnswer)
         // 3.then
@@ -108,7 +108,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         let rightCategory = Theme("Test theme")
         let mockAnswer = Answer()
         mockAnswer.addWeight(10, for: rightCategory)
-        let sut = SingleChoiseQuestion(categories: [rightCategory])
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [rightCategory])
         // 2.when
         sut.add(answer:mockAnswer)
         // 3.then
@@ -123,7 +123,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         let mockAnswer = Answer()
         mockAnswer.addWeight(1, for: wrongCategory)
         mockAnswer.addWeight(10, for: rightCategory)
-        let sut = SingleChoiseQuestion()
+        let sut = SingleChoiseQuestion(statement: mockStatement)
         // 2.when
         sut.add(answer:mockAnswer)
         // 3.then
@@ -136,7 +136,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         let mockAnswer = Answer()
         mockAnswer.addWeight(1, for: rightCategory)
         // 2.when
-        let sut = SingleChoiseQuestion(categories: [rightCategory], answers: [mockAnswer])
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [rightCategory], answers: [mockAnswer])
         // 3.then
         XCTAssertEqual(sut.answers.count, 1, "Right answer was not added to SingleChoiseQuestion", file: "SingleChoiseQuestion.swift", line: 34)
     }
@@ -148,7 +148,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
         }
-        let sut = SingleChoiseQuestion(categories: [themeCategory], answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [themeCategory], answers: mockAnswers)
         // 2.when
         sut.remove(answer: mockAnswers[1])
         // 3.then
@@ -164,7 +164,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
         }
-        let sut = SingleChoiseQuestion(categories: [themeCategory], answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [themeCategory], answers: mockAnswers)
         // 2.when
         sut.remove(answer: sut.answers[1])
         // 3.then
@@ -181,13 +181,13 @@ class SingleChoiseQuestionTests: XCTestCase {
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
         }
-        let sut = SingleChoiseQuestion(categories: [themeCategory], answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [themeCategory], answers: mockAnswers)
         // 2.when
         sut.choose(answer: mockAnswers[0])
         // 3.then
         XCTAssertEqual(sut.choosenAnswer, mockAnswers[0], "Choosen answer was not applied", file: "SingleChoiseQuestion.swift", line: 76)
         XCTAssertEqual(sut.result, mockAnswers[0].impacts, "Choosen answer impacts were not applied", file: "SingleChoiseQuestion.swift", line: 77)
-        XCTAssertEqual(sut.status, .passed, "SingleChoiseQuestion status was not changed to passed", file: "SingleChoiseQuestion.swift", line: 77)
+        XCTAssertEqual(sut.status, .answered, "SingleChoiseQuestion status was not changed to passed", file: "SingleChoiseQuestion.swift", line: 77)
     }
     
     func  test_SingleChoiseQuestion_notFirstAnswerChoosen(){
@@ -197,13 +197,13 @@ class SingleChoiseQuestionTests: XCTestCase {
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
         }
-        let sut = SingleChoiseQuestion(categories: [themeCategory], answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [themeCategory], answers: mockAnswers)
         // 2.when
         sut.choose(answer: mockAnswers[2])
         // 3.then
         XCTAssertEqual(sut.choosenAnswer, mockAnswers[2], "Choosen answer was not applied", file: "SingleChoiseQuestion.swift", line: 76)
         XCTAssertEqual(sut.result, mockAnswers[0].impacts, "Choosen answer impacts were not applied", file: "SingleChoiseQuestion.swift", line: 77)
-        XCTAssertEqual(sut.status, .passed, "SingleChoiseQuestion status was not changed to passed", file: "SingleChoiseQuestion.swift", line: 77)
+        XCTAssertEqual(sut.status, .answered, "SingleChoiseQuestion status was not changed to passed", file: "SingleChoiseQuestion.swift", line: 77)
     }
     
     // MARK: - If Answer has multiple effects on different categories
@@ -225,7 +225,7 @@ class SingleChoiseQuestionTests: XCTestCase {
             }
         }
         
-        let sut = SingleChoiseQuestion(categories: testCategories, answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: testCategories, answers: mockAnswers)
         // 2.when
         sut.choose(answer: mockAnswers[0])
         print("\(sut.result)")
@@ -254,7 +254,7 @@ class SingleChoiseQuestionTests: XCTestCase {
             }
         }
         
-        let sut = SingleChoiseQuestion(categories: testCategories, answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: testCategories, answers: mockAnswers)
         // 2.when
         sut.choose(answer: mockAnswers[0])
         sut.choose(answer: mockAnswers[1])
@@ -273,14 +273,14 @@ class SingleChoiseQuestionTests: XCTestCase {
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
         }
-        let sut = SingleChoiseQuestion(categories: [themeCategory], answers: mockAnswers)
+        let sut = SingleChoiseQuestion(statement: mockStatement, categories: [themeCategory], answers: mockAnswers)
         // 2.when
         sut.choose(answer: mockAnswers[2])
         sut.reset()
         // 3.then
         XCTAssertEqual(sut.result.count, 0, "Result was not reseted", file: "SingleChoiseQuestion.swift", line: 76)
         XCTAssertNil(sut.choosenAnswer, "Choosen answer was not reseted to nil", file: "SingleChoiseQuestion.swift", line: 77)
-        XCTAssertEqual(sut.status, .notPassed, "SingleChoiseQuestion status was not reset to notPassed", file: "SingleChoiseQuestion.swift", line: 77)
+        XCTAssertEqual(sut.status, .notAnswered, "SingleChoiseQuestion status was not reset to notAnswered", file: "SingleChoiseQuestion.swift", line: 77)
     }
     
     

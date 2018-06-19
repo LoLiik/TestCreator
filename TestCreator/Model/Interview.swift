@@ -8,27 +8,6 @@
 
 import Foundation
 
-protocol Question{
-//    static func ==(lhs:Question, rhs:Question) -> Bool
-    var result: [Theme:Double] {get set}
-    var categories: [Theme] {get set}
-    var questionType: QuestionType {get}
-    var statement: String? {get set}
-}
-
-enum QueryStatus{
-    case passed
-    case notPassed
-}
-
-enum QuestionType{
-    case singleAnswer
-    case multipleAnswer
-    case pairs
-    case scroller
-}
-
-
 class Interview
 {
     var questions:[Question]
@@ -38,8 +17,12 @@ class Interview
     }
     
     func add(question: Question){
-        if !self.questions.contains(where: { $0.questionType == question.questionType && $0.statement == question.statement}){
+        if !self.questions.contains(question){
             self.questions.append(question)
         }
+    }
+    
+    func remove(question: Question){
+        
     }
 }

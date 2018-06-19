@@ -8,12 +8,25 @@
 
 import Foundation
 
-
-// TODO: - Statement class handle wording/image/audio description of question and gives an opportunity to Question be equatable
-// TODO: - Text property
-// TODO: - Image property
-// TODO: - Audio property
-// TODO: - Conformance to Equatable ==(lhs:, rhs:)
-class Statement{
+class Statement:Equatable{
+    static func == (lhs: Statement, rhs: Statement) -> Bool {
+        return lhs.text == rhs.text && lhs.imageURL == rhs.imageURL && lhs.audioFileName == rhs.audioFileName
+    }
     
+    var text:String?
+    var imageURL:URL?
+    // TODO: - Audio property
+    var audioFileName: String? // or URL? or path? //
+    
+    init(text: String?, imageURL: URL? = nil, audioFileName: String? = nil){
+        guard text != nil && imageURL != nil && audioFileName != nil else {
+            self.text = ""
+            return
+        }
+        self.text = text
+        self.imageURL = imageURL
+        self.audioFileName = audioFileName
+    }
 }
+
+
