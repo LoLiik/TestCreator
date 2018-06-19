@@ -19,7 +19,7 @@ class Statement:Equatable{
     var audioFileName: String? // or URL? or path? //
     
     init(text: String?, imageURL: URL? = nil, audioFileName: String? = nil){
-        guard text != nil && imageURL != nil && audioFileName != nil else {
+        guard text != nil || imageURL != nil || audioFileName != nil else {
             self.text = ""
             return
         }

@@ -67,6 +67,12 @@ class TestTests: XCTestCase {
         let firstQuestion = SingleChoiseQuestion(statement: firstStatement)
         let secondStatement = Statement(text: "Another Statement")
         let secondQuestion = SingleChoiseQuestion(statement: secondStatement)
+        if firstStatement == secondStatement{
+            XCTFail()
+        }
+        if firstQuestion == secondQuestion{
+            XCTFail()
+        }
         let sut = Interview()
         // 2.when
         sut.add(question: firstQuestion)
