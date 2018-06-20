@@ -11,11 +11,11 @@ import Foundation
 class SingleChoiseQuestion:Question{
     override var questionType: QuestionType{return .singleAnswer}
     var status: QuestionStatus = .notAnswered
-    var answers: [Answer] = []
-    var choosenAnswer: Answer? = nil
+    var answers: [ChoiseAnswer] = []
+    var choosenAnswer: ChoiseAnswer? = nil
     
     
-    init(statement: Statement, categories: [Theme] = [], answers: [Answer] = []){
+    init(statement: Statement, categories: [Theme] = [], answers: [ChoiseAnswer] = []){
         super.init(statement: statement)
         self.categories = categories
         for newAnswer in answers{
@@ -40,7 +40,7 @@ class SingleChoiseQuestion:Question{
         return nil
     }
     
-    func add(answer:Answer){
+    func add(answer:ChoiseAnswer){
         guard !self.answers.contains(answer) else {return}
         for answerCategory in answer.impacts.keys{
             if !self.categories.contains(answerCategory){
@@ -52,14 +52,14 @@ class SingleChoiseQuestion:Question{
         
     }
     
-    func remove(answer:Answer) -> Answer?{
+    func remove(answer:ChoiseAnswer) -> ChoiseAnswer?{
         if let index = answers.index(of: answer){
             return self.answers.remove(at: index)
         }
         return nil
     }
     
-    func choose(answer:Answer){
+    func choose(answer:ChoiseAnswer){
         if answers.contains(answer), choosenAnswer != answer{
             choosenAnswer = answer
             result = answer.impacts

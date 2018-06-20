@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestCreatorTests/StatesmentTests.swift"
+            timestampString = "551182832.89852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "test_Statement_NotEqualityOfTwoDifferentStatements()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestCreatorTests.StatesmentTests.test_Statement_NotEqualityOfTwoDifferentStatements() -&gt; ()"
+                  moduleName = "TestCreatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lol_ik/Develop/Projects/TestCreator/TestCreator/TestCreatorTests/StatesmentTests.swift"
+                  timestampString = "551109935.489326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1003">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 : @autoclosure () -&gt; Swift.String in TestCreatorTests.StatesmentTests.test_Statement_NotEqualityOfTwoDifferentStatements() -&gt; ()"
+                  moduleName = "TestCreatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lol_ik/Develop/Projects/TestCreator/TestCreator/TestCreatorTests/StatesmentTests.swift"
+                  timestampString = "551109935.491974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Statement:Equatable{
+class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 Statement:Equatable{
     static func == (lhs: Statement, rhs: Statement) -> Bool {
         return lhs.text == rhs.text && lhs.imageURL == rhs.imageURL && lhs.audioFileName == rhs.audioFileName
     }
@@ -18,7 +18,7 @@ class Statement:Equatable{
     // TODO: - Audio property
     var audioFileName: String? // or URL? or path? //
     
-    init(text: String?, imageURL: URL? = nil, audioFileName: String? = nil){
+    init(text: String? = "", imageURL: URL? = nil, audioFileName: String? = nil){
         guard text != nil || imageURL != nil || audioFileName != nil else {
             self.text = ""
             return

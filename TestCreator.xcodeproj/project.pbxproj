@@ -15,8 +15,8 @@
 		FD42E78E20D24517007063C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD42E78C20D24517007063C0 /* LaunchScreen.storyboard */; };
 		FD42E7A720D24579007063C0 /* SingleChoiseQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E7A620D24579007063C0 /* SingleChoiseQuestion.swift */; };
 		FD42E7B720D24C56007063C0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E7B620D24C56007063C0 /* Theme.swift */; };
-		FD42E80F20D27C49007063C0 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E80E20D27C49007063C0 /* Answer.swift */; };
-		FD42E81120D2A08A007063C0 /* AnswerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E81020D2A08A007063C0 /* AnswerTests.swift */; };
+		FD42E80F20D27C49007063C0 /* ChoiseAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E80E20D27C49007063C0 /* ChoiseAnswer.swift */; };
+		FD42E81120D2A08A007063C0 /* ChoiseAnswerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E81020D2A08A007063C0 /* ChoiseAnswerTests.swift */; };
 		FD42E81320D2AF38007063C0 /* SingleChoiseQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42E81220D2AF38007063C0 /* SingleChoiseQuestionTests.swift */; };
 		FD995B0C20D6B19600B6A152 /* InterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995B0B20D6B19600B6A152 /* InterviewTests.swift */; };
 		FD995B0E20D6B25300B6A152 /* Interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995B0D20D6B25300B6A152 /* Interview.swift */; };
@@ -48,8 +48,8 @@
 		FD42E7B620D24C56007063C0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FD42E7D520D26D7A007063C0 /* TestCreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCreatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD42E7D920D26D7A007063C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD42E80E20D27C49007063C0 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
-		FD42E81020D2A08A007063C0 /* AnswerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTests.swift; sourceTree = "<group>"; };
+		FD42E80E20D27C49007063C0 /* ChoiseAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseAnswer.swift; sourceTree = "<group>"; };
+		FD42E81020D2A08A007063C0 /* ChoiseAnswerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseAnswerTests.swift; sourceTree = "<group>"; };
 		FD42E81220D2AF38007063C0 /* SingleChoiseQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiseQuestionTests.swift; sourceTree = "<group>"; };
 		FD995B0B20D6B19600B6A152 /* InterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewTests.swift; sourceTree = "<group>"; };
 		FD995B0D20D6B25300B6A152 /* Interview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interview.swift; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				FD995B1820D936A000B6A152 /* Questions */,
 				FD995B0D20D6B25300B6A152 /* Interview.swift */,
 				FD42E7B620D24C56007063C0 /* Theme.swift */,
-				FD42E80E20D27C49007063C0 /* Answer.swift */,
 				FD995B0F20D7EC1100B6A152 /* Statement.swift */,
 			);
 			path = Model;
@@ -143,7 +142,7 @@
 				FD995B0B20D6B19600B6A152 /* InterviewTests.swift */,
 				FD42E81220D2AF38007063C0 /* SingleChoiseQuestionTests.swift */,
 				FD995B1420D9222900B6A152 /* StatesmentTests.swift */,
-				FD42E81020D2A08A007063C0 /* AnswerTests.swift */,
+				FD42E81020D2A08A007063C0 /* ChoiseAnswerTests.swift */,
 				FD42E7D920D26D7A007063C0 /* Info.plist */,
 			);
 			path = TestCreatorTests;
@@ -153,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				FD42E7A620D24579007063C0 /* SingleChoiseQuestion.swift */,
+				FD42E80E20D27C49007063C0 /* ChoiseAnswer.swift */,
 				FD995B1620D9367100B6A152 /* Question.swift */,
 			);
 			path = Questions;
@@ -208,9 +208,11 @@
 				TargetAttributes = {
 					FD42E77C20D24513007063C0 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					FD42E7D420D26D7A007063C0 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = FD42E77C20D24513007063C0;
 					};
 				};
@@ -264,7 +266,7 @@
 				FD42E78120D24513007063C0 /* AppDelegate.swift in Sources */,
 				FD995B1720D9367100B6A152 /* Question.swift in Sources */,
 				FD995B0E20D6B25300B6A152 /* Interview.swift in Sources */,
-				FD42E80F20D27C49007063C0 /* Answer.swift in Sources */,
+				FD42E80F20D27C49007063C0 /* ChoiseAnswer.swift in Sources */,
 				FD42E78920D24513007063C0 /* TestCreator.xcdatamodeld in Sources */,
 				FD42E7B720D24C56007063C0 /* Theme.swift in Sources */,
 				FD995B1020D7EC1100B6A152 /* Statement.swift in Sources */,
@@ -278,7 +280,7 @@
 				FD995B1520D9222900B6A152 /* StatesmentTests.swift in Sources */,
 				FD42E81320D2AF38007063C0 /* SingleChoiseQuestionTests.swift in Sources */,
 				FD995B0C20D6B19600B6A152 /* InterviewTests.swift in Sources */,
-				FD42E81120D2A08A007063C0 /* AnswerTests.swift in Sources */,
+				FD42E81120D2A08A007063C0 /* ChoiseAnswerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +441,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cs193-09.2017.TestCreator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -457,7 +459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cs193-09.2017.TestCreator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -476,7 +478,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cs193-09.2017.TestCreatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestCreator.app/TestCreator";
 			};
@@ -496,7 +498,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cs193-09.2017.TestCreatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestCreator.app/TestCreator";
 			};

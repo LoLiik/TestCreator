@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: - Super class of all questions
 class Question: Equatable{
     static func == (lhs: Question, rhs: Question) -> Bool {
         return lhs.questionType == rhs.questionType && lhs.statement == rhs.statement && lhs.categories == rhs.categories

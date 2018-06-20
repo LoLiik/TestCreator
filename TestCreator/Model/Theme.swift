@@ -12,14 +12,21 @@ class Theme:Equatable, Hashable{
     private var name:String
     private var description:String?
     
-    init(_ label:String){
-        name = label
+    init(){
+        self.name = ""
     }
     
+    init(_ name:String){
+        self.name = name
+    }
+    
+    //MARK: - Equatable conformance: to provide contains method in array
     static func ==(lhs: Theme, rhs: Theme) -> Bool{
         return lhs.name == rhs.name
     }
     
+    
+    //MARK: - Hashable conformance: to provide Theme as a key in dictionary
     var hashValue: Int{
         return name.hashValue ^ (description ?? "default").hashValue
     }

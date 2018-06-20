@@ -83,7 +83,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     
     func test_SingleChoiseQuestion_HasAnswer() {
         // 1.given
-        let mockAnswer = Answer(text: "Mock Answer")
+        let mockAnswer = ChoiseAnswer(text: "Mock Answer")
         let sut = SingleChoiseQuestion(statement: mockStatement)
         // 2.when
         sut.add(answer: mockAnswer)
@@ -94,7 +94,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_AddingAnswerWithWrongCategory(){
         // 1.given
         let wrongCategory = Theme("Another theme")
-        let mockAnswer = Answer()
+        let mockAnswer = ChoiseAnswer()
         mockAnswer.addWeight(1, for: wrongCategory)
         let sut = SingleChoiseQuestion(statement: mockStatement)
         // 2.when
@@ -106,7 +106,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_AddingAnswerWithRightCategory(){
         // 1.given
         let rightCategory = Theme("Test theme")
-        let mockAnswer = Answer()
+        let mockAnswer = ChoiseAnswer()
         mockAnswer.addWeight(10, for: rightCategory)
         let sut = SingleChoiseQuestion(statement: mockStatement, categories: [rightCategory])
         // 2.when
@@ -120,7 +120,7 @@ class SingleChoiseQuestionTests: XCTestCase {
         // 1.given
         let rightCategory = Theme("Test theme")
         let wrongCategory = Theme("Another theme")
-        let mockAnswer = Answer()
+        let mockAnswer = ChoiseAnswer()
         mockAnswer.addWeight(1, for: wrongCategory)
         mockAnswer.addWeight(10, for: rightCategory)
         let sut = SingleChoiseQuestion(statement: mockStatement)
@@ -133,7 +133,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func test_SingleChoiseQuestion_CreatingWithRightAnswerCategory(){
         // 1.given
         let rightCategory = Theme("Test theme")
-        let mockAnswer = Answer()
+        let mockAnswer = ChoiseAnswer()
         mockAnswer.addWeight(1, for: rightCategory)
         // 2.when
         let sut = SingleChoiseQuestion(statement: mockStatement, categories: [rightCategory], answers: [mockAnswer])
@@ -143,7 +143,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     
     func test_SingleChoiseQuestion_RemovingNotLastAnswer() {
         // 1.given
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         let themeCategory = Theme("Test theme")
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
@@ -159,7 +159,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     
     func test_SingleChoiseQuestion_RemovingLastAnswer() {
         // 1.given
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         let themeCategory = Theme("Test theme")
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
@@ -176,7 +176,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     
     func  test_SingleChoiseQuestion_firstAnswerChoosen(){
         // 1.given
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         let themeCategory = Theme("Test theme")
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
@@ -192,7 +192,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     
     func  test_SingleChoiseQuestion_notFirstAnswerChoosen(){
         // 1.given
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         let themeCategory = Theme("Test theme")
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)
@@ -210,7 +210,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func  test_SingleChoiseQuestion_hasMultipleResultsWhenAnswered(){
         // 1.given
         let testCategories = [Theme("First Theme"), Theme("Second Theme"), Theme("Third Theme")]
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         var impactCount = 4.0
         for answer in mockAnswers{
             var weight = 1.0
@@ -239,7 +239,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     func  test_SingleChoiseQuestion_chooseAnotherAnswerWhenPassed(){
         // 1.given
         let testCategories = [Theme("First Theme"), Theme("Second Theme"), Theme("Third Theme")]
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         var impactCount = 4.0
         for answer in mockAnswers{
             var weight = 1.0
@@ -268,7 +268,7 @@ class SingleChoiseQuestionTests: XCTestCase {
     
     func test_SingleChoiseQuestion_ChangeStatusWhenAborted(){
         // 1.given
-        let mockAnswers = [Answer(text: "First answer"), Answer(text: "Second Answer"), Answer(text: "Third Answer")]
+        let mockAnswers = [ChoiseAnswer(text: "First answer"), ChoiseAnswer(text: "Second Answer"), ChoiseAnswer(text: "Third Answer")]
         let themeCategory = Theme("Test theme")
         for answer in mockAnswers{
             answer.addWeight(1, for: themeCategory)

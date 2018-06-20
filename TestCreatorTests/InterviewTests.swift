@@ -67,12 +67,12 @@ class TestTests: XCTestCase {
         let firstQuestion = SingleChoiseQuestion(statement: firstStatement)
         let secondStatement = Statement(text: "Another Statement")
         let secondQuestion = SingleChoiseQuestion(statement: secondStatement)
-        if firstStatement == secondStatement{
-            XCTFail()
-        }
-        if firstQuestion == secondQuestion{
-            XCTFail()
-        }
+//        if firstStatement == secondStatement{
+//            XCTFail()
+//        }
+//        if firstQuestion == secondQuestion{
+//            XCTFail()
+//        }
         let sut = Interview()
         // 2.when
         sut.add(question: firstQuestion)
@@ -102,7 +102,7 @@ class TestTests: XCTestCase {
     
     func test_Interview_removeExistingQuestion(){
         // 1.given
-        let mockStatement = Statement(text: "Mock Statement")
+//        let mockStatement = Statement(text: "Mock Statement")
 //        let question: SingleChoiseQuestion = SingleChoiseQuestion()
         XCTFail()
 //        if let statement = mockStatement {

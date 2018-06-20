@@ -9,29 +9,33 @@
 import Foundation
 import UIKit
 
-class Answer:Equatable{
-    static func == (lhs: Answer, rhs: Answer) -> Bool {
-        return lhs.text == rhs.text && lhs.image == rhs.image
+class ChoiseAnswer:Equatable{
+    static func == (lhs: ChoiseAnswer, rhs: ChoiseAnswer) -> Bool {
+        return lhs.text == rhs.text && lhs.imageURL == rhs.imageURL
     }
     
     var text:String?
-    var image: UIImage?
+    var imageURL: URL?
     var correctAnswer:Bool? = nil
     var impacts:[Theme:Double] = [:]
     
     init(text: String){
         self.text = text
-        self.image = nil
+        self.imageURL = nil
     }
     
-    init(image:UIImage){
-        self.image = image
+    init(image:URL){
+        self.imageURL = image
         self.text = nil
     }
     
-    init(text:String = "Default answer option", image: UIImage? = nil, correctAnswer: Bool? = nil){
+    init(text:String? = "", imageURL: URL? = nil, correctAnswer: Bool? = nil){
+        guard text != nil || imageURL != nil || correctAnswer != nil else {
+            self.text = ""
+            return
+        }
         self.text = text
-        self.image = image
+        self.imageURL = imageURL
         self.correctAnswer = correctAnswer
     }
     
