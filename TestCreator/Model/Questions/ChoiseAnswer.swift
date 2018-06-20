@@ -39,11 +39,11 @@ class ChoiseAnswer:Equatable{
         self.correctAnswer = correctAnswer
     }
     
-    func addWeight(_ weight: Double, for category:Theme) {
-        self.impacts.updateValue(weight, forKey: category)
+    func addWeight(_ weight: Double, for theme:Theme) {
+        self.impacts.updateValue(weight, forKey: theme)
     }
     
-    func removeWeight(for category:Theme){
-        self.impacts.removeValue(forKey: category)
+    func removeWeight(for theme:Theme){
+        self.impacts.removeValue(forKey: theme)
     }
 }

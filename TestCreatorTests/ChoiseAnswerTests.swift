@@ -10,10 +10,9 @@ import XCTest
 @testable import TestCreator
 
 class ChoiseAnswerTests: XCTestCase {
-    
     func test_Answer_HasTextWithNilImage(){
         // 1.given
-        let answerText = "First option of  answer"
+        let answerText = "First option of answer"
         // 2.when
         let sut = ChoiseAnswer(text: answerText)
         // 3.then
@@ -84,7 +83,7 @@ class ChoiseAnswerTests: XCTestCase {
         XCTAssertEqual(sut.impacts[theme], 10.0, "Answer's impacts has wrong length", file : "Answer.swift", line: 39)
     }
     
-    func test_Answer_RemoveWeightForCategories(){
+    func test_Answer_RemoveWeightForThemes(){
         // 1.given
         let theme = Theme()
         let sut = ChoiseAnswer()

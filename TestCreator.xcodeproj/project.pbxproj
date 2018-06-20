@@ -23,6 +23,7 @@
 		FD995B1020D7EC1100B6A152 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995B0F20D7EC1100B6A152 /* Statement.swift */; };
 		FD995B1520D9222900B6A152 /* StatesmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995B1420D9222900B6A152 /* StatesmentTests.swift */; };
 		FD995B1720D9367100B6A152 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD995B1620D9367100B6A152 /* Question.swift */; };
+		FDDDCE0920DA74E8007966A2 /* MultipleChoiseQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDDCE0820DA74E8007966A2 /* MultipleChoiseQuestionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		FD995B0F20D7EC1100B6A152 /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		FD995B1420D9222900B6A152 /* StatesmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesmentTests.swift; sourceTree = "<group>"; };
 		FD995B1620D9367100B6A152 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		FDDDCE0820DA74E8007966A2 /* MultipleChoiseQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleChoiseQuestionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		FD42E7D620D26D7A007063C0 /* TestCreatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				FDDDCE0820DA74E8007966A2 /* MultipleChoiseQuestionTests.swift */,
 				FD995B0B20D6B19600B6A152 /* InterviewTests.swift */,
 				FD42E81220D2AF38007063C0 /* SingleChoiseQuestionTests.swift */,
 				FD995B1420D9222900B6A152 /* StatesmentTests.swift */,
@@ -280,6 +283,7 @@
 				FD995B1520D9222900B6A152 /* StatesmentTests.swift in Sources */,
 				FD42E81320D2AF38007063C0 /* SingleChoiseQuestionTests.swift in Sources */,
 				FD995B0C20D6B19600B6A152 /* InterviewTests.swift in Sources */,
+				FDDDCE0920DA74E8007966A2 /* MultipleChoiseQuestionTests.swift in Sources */,
 				FD42E81120D2A08A007063C0 /* ChoiseAnswerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

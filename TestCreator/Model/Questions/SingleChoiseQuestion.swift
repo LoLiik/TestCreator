@@ -14,36 +14,34 @@ class SingleChoiseQuestion:Question{
     var answers: [ChoiseAnswer] = []
     var choosenAnswer: ChoiseAnswer? = nil
     
-    
-    init(statement: Statement, categories: [Theme] = [], answers: [ChoiseAnswer] = []){
+    init(statement: Statement, themes: [Theme] = [], answers: [ChoiseAnswer] = []){
         super.init(statement: statement)
-        self.categories = categories
+        self.themes = themes
         for newAnswer in answers{
             self.add(answer: newAnswer)
         }
     }
     
-    public var currentCategory: [Theme]{
-        return categories
+    public var currentThemes: [Theme]{
+        return themes
     }
     
-    func add(category:Theme) {
-        if !self.currentCategory.contains(category){
-            self.categories.append(category)
+    func add(theme:Theme) {
+        if !self.currentThemes.contains(theme){
+            self.themes.append(theme)
         }
     }
     
-    func remove(category:Theme) -> Theme?{
-        if let index = categories.index(of: category){
-            return self.categories.remove(at: index)
+    func remove(theme:Theme){
+        if let index = themes.index(of: theme){
+            self.themes.remove(at: index)
         }
-        return nil
     }
     
     func add(answer:ChoiseAnswer){
         guard !self.answers.contains(answer) else {return}
-        for answerCategory in answer.impacts.keys{
-            if !self.categories.contains(answerCategory){
+        for answerTheme in answer.impacts.keys{
+            if !self.themes.contains(answerTheme){
                 return
             }
         }
@@ -52,11 +50,10 @@ class SingleChoiseQuestion:Question{
         
     }
     
-    func remove(answer:ChoiseAnswer) -> ChoiseAnswer?{
+    func remove(answer:ChoiseAnswer){
         if let index = answers.index(of: answer){
-            return self.answers.remove(at: index)
+             self.answers.remove(at: index)
         }
-        return nil
     }
     
     func choose(answer:ChoiseAnswer){

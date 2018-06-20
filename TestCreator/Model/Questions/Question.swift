@@ -11,10 +11,10 @@ import Foundation
 //MARK: - Super class of all questions
 class Question: Equatable{
     static func == (lhs: Question, rhs: Question) -> Bool {
-        return lhs.questionType == rhs.questionType && lhs.statement == rhs.statement && lhs.categories == rhs.categories
+        return lhs.questionType == rhs.questionType && lhs.statement == rhs.statement && lhs.themes == rhs.themes
     }
     var result: [Theme:Double] = [:]
-    var categories: [Theme] = []
+    var themes: [Theme] = []
     var questionType: QuestionType {return .unknown}
     var statement: Statement
     
